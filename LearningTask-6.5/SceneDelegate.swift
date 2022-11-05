@@ -17,8 +17,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         
-//        let autoresViewController = (window!.rootViewController as! UINavigationController)
-//            .topViewController as! AutoresViewController
+        let autoresViewController = (window!.rootViewController as! UINavigationController)
+            .topViewController as! AuthorsViewController
+        autoresViewController.authors = AutorAPI().listaTodos()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
